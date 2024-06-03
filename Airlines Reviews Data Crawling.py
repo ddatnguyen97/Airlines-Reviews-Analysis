@@ -25,6 +25,13 @@ japan_airlines_url = "https://www.airlinequality.com/airline-reviews/japan-airli
 air_asia_url = "https://www.airlinequality.com/airline-reviews/airasia/?sortby=post_date%3ADesc&pagesize=100"
 korean_air_url = "https://www.airlinequality.com/airline-reviews/korean-air/?sortby=post_date%3ADesc&pagesize=100"
 eitihad_airways_url = "https://www.airlinequality.com/airline-reviews/etihad-airways/?sortby=post_date%3ADesc&pagesize=100"
+cathay_pacific_url = "https://www.airlinequality.com/airline-reviews/cathay-pacific-airways/?sortby=post_date%3ADesc&pagesize=100"
+bangkok_airways_url = "https://www.airlinequality.com/airline-reviews/bangkok-airways/?sortby=post_date%3ADesc&pagesize=100"
+malaysia_airlines_url = "https://www.airlinequality.com/airline-reviews/malaysia-airlines/?sortby=post_date%3ADesc&pagesize=100"
+eva_air_url = "https://www.airlinequality.com/airline-reviews/eva-air/?sortby=post_date%3ADesc&pagesize=100"
+air_china_url = "https://www.airlinequality.com/airline-reviews/air-china/?sortby=post_date%3ADesc&pagesize=100"
+air_india_url = "https://www.airlinequality.com/airline-reviews/air-india/?sortby=post_date%3ADesc&pagesize=100"
+hongkong_airlines_url = "https://www.airlinequality.com/airline-reviews/hong-kong-airlines/?sortby=post_date%3ADesc&pagesize=100"
 
 # url_list = [jetstar_pacific_url, 
 #             bamboo_airways_url, 
@@ -37,7 +44,7 @@ eitihad_airways_url = "https://www.airlinequality.com/airline-reviews/etihad-air
 #             air_asia_url, 
 #             korean_air_url]
 
-driver.get(eitihad_airways_url)
+driver.get()
 
 def scrape_all_ratings():
     ratings_div = WebDriverWait(driver, 10).until(EC.presence_of_all_elements_located((By.CSS_SELECTOR, ".review-stats")))
@@ -117,8 +124,11 @@ def scrape_all_info():
         all_customer_name.append(customer_name)
 
         full_text = info.text
-        start = full_text.find(customer_name) + len(customer_name) + 2  # Start after the customer name and the space and opening parenthesis
-        end = full_text.find(')', start)  # Find the closing parenthesis after the start index
+        # Start after the customer name and the space and opening parenthesis
+        start = full_text.find(customer_name) + len(customer_name) + 2  
+        # Find the closing parenthesis after the start index
+        end = full_text.find(')', start)  
+        
         country = full_text[start:end]
         all_country.append(country)
 
