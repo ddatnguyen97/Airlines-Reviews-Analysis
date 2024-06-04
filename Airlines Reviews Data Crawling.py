@@ -32,6 +32,8 @@ eva_air_url = "https://www.airlinequality.com/airline-reviews/eva-air/?sortby=po
 air_china_url = "https://www.airlinequality.com/airline-reviews/air-china/?sortby=post_date%3ADesc&pagesize=100"
 air_india_url = "https://www.airlinequality.com/airline-reviews/air-india/?sortby=post_date%3ADesc&pagesize=100"
 hongkong_airlines_url = "https://www.airlinequality.com/airline-reviews/hong-kong-airlines/?sortby=post_date%3ADesc&pagesize=100"
+indigo_airlines_url = "https://www.airlinequality.com/airline-reviews/indigo-airlines/?sortby=post_date%3ADesc&pagesize=100"
+gulf_air_url = "https://www.airlinequality.com/airline-reviews/gulf-air/?sortby=post_date%3ADesc&pagesize=100"
 
 # url_list = [jetstar_pacific_url, 
 #             bamboo_airways_url, 
@@ -44,7 +46,7 @@ hongkong_airlines_url = "https://www.airlinequality.com/airline-reviews/hong-kon
 #             air_asia_url, 
 #             korean_air_url]
 
-driver.get()
+driver.get(gulf_air_url)
 
 def scrape_all_ratings():
     ratings_div = WebDriverWait(driver, 10).until(EC.presence_of_all_elements_located((By.CSS_SELECTOR, ".review-stats")))
