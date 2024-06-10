@@ -33,3 +33,7 @@ select "Airline Name", avg("Ground Service") as "AVG Ground Service",
 from airlines_reviews
 group by "Airline Name"
 order by "Airline Name" desc
+
+select "Customer Name", "Country", "Seat Type", "Type Of Traveller", "Recommended"
+from airlines_reviews
+where "Country" = 'United Kingdom'
