@@ -37,3 +37,4 @@ order by "Airline Name" desc
 select "Customer Name", "Country", "Seat Type", "Type Of Traveller", "Recommended"
 from airlines_reviews
 where "Country" = 'United Kingdom'
+
